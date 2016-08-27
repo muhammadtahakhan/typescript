@@ -5,9 +5,12 @@ function submitad(){
     // let title = (<HTMLInputElement>document.getElementById('title')).value;
     // console.log(title);
     let title = <HTMLInputElement>document.getElementById('title');
-    let sdata = [];
+    let sdata;
       sdata= JSON.parse(localStorage.getItem('title'));
-    sdata.push(title.value);
+      if(sdata==null){
+           sdata = [];
+      }
+      sdata.push(title.value);
 
      localStorage.setItem('title', JSON.stringify(sdata));
 

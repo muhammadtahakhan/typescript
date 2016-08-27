@@ -4,8 +4,11 @@ function submitad() {
     // let title = (<HTMLInputElement>document.getElementById('title')).value;
     // console.log(title);
     var title = document.getElementById('title');
-    var sdata = [];
+    var sdata;
     sdata = JSON.parse(localStorage.getItem('title'));
+    if (sdata == null) {
+        sdata = [];
+    }
     sdata.push(title.value);
     localStorage.setItem('title', JSON.stringify(sdata));
     console.log(sdata);
